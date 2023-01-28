@@ -53,6 +53,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\GameSctipt\Connect\ConnectDB.cs" />
+     <Compile Include="Assets\GameSctipt\Connect\ReadTable.cs" />
+     <Compile Include="Assets\GameSctipt\Connect\Qustion.cs" />
  <Reference Include="UnityEngine">
  <HintPath>F:/HUb/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -275,11 +277,11 @@
  <Reference Include="UnityEditor.UnityConnectModule">
  <HintPath>F:/HUb/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>E:/ProjectUnity/Quadra test/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
- </Reference>
  <Reference Include="MySql.Data">
  <HintPath>E:/ProjectUnity/Quadra test/Assets/Libraries/MySql.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>E:/ProjectUnity/Quadra test/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>F:/HUb/2020.3.25f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
