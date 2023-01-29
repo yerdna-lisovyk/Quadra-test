@@ -5,15 +5,22 @@ using System.IO;
 using MySql.Data.MySqlClient;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class ReadTable : MonoBehaviour
 {
     public List<Qustion> Questions { get; private set; }
-    public List<Variant> Variants { get; private set; }
+
     
     [SerializeField] private ConnectDB connect;
-    
-    
+
+    private void Start()
+    {
+        ReadQuestion();
+        ReadVariant();
+        
+    }
+
     private void ReadQuestion()
     {
         var query = string.Empty; 
@@ -26,7 +33,7 @@ public class ReadTable : MonoBehaviour
         {
             MySqlCommand cmd = null;
             MySqlDataReader rdr = null;
-            query = "SELECT * FROM questions WHERE Id_test = 1";
+            query = "SELECT * FROM questions WHERE Id_test = 3";
             connect.TryConnect();
             using (connect.Con)
             {
@@ -51,37 +58,36 @@ public class ReadTable : MonoBehaviour
     }
     private void ReadVariant()
     {
-        var query = string.Empty; 
-        if (Variants == null) 
-            Variants = new List<Variant>(); 
-        if (Variants.Count > 0) 
-            Variants.Clear();
-
+        var query = string.Empty;
         try
         {
             MySqlCommand cmd = null;
             MySqlDataReader rdr = null;
-            query = "SELECT * FROM questions WHERE Id_test = 1";
-            connect.TryConnect();
-            using (connect.Con)
+            foreach (var question in Questions)
             {
-                using (cmd = new MySqlCommand(query, connect.Con))
+                query = "SELECT * FROM variants WHERE id_question = "+question.IDQuestion+"";
+                connect.TryConnect();
+                using (connect.Con)
                 {
-                    rdr = cmd.ExecuteReader();
-                    if (rdr.HasRows)
+                    using (cmd = new MySqlCommand(query, connect.Con))
                     {
-                        while (rdr.Read())
+                        rdr = cmd.ExecuteReader();
+                        if (rdr.HasRows)
                         {
-                            var question = new Variant();
-                            question.IDQuestion = int.Parse(rdr["Id_question"].ToString());
-                            question.Description = rdr["description"].ToString();
-                            question.Loyalty = bool.Parse(rdr["loyalty"].ToString());
-                            Variants.Add(question);
+                            while (rdr.Read())
+                            {
+                                var variant = new Variant();
+                                variant.IDQuestion = int.Parse(rdr["id_question"].ToString());
+                                variant.Description = rdr["description"].ToString();
+                                variant.Loyalty = bool.Parse(rdr["loyalty"].ToString());
+                                question.Variants.Add(variant);
+                            }
                         }
+                        rdr.Dispose();
                     }
-                    rdr.Dispose();
                 }
             }
+            
         }
         catch (IOException ex) {Debug.Log(ex.ToString());}
     }

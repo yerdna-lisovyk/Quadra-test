@@ -25,7 +25,6 @@ public class ConnectDB : MonoBehaviour
             if (Con.State != ConnectionState.Open)
             {
                 Con.Open();
-                Debug.Log("Connection State: " + Con.State);
             }
         } 
         catch (IOException ex)  {Debug.Log(ex.ToString());} 

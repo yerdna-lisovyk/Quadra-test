@@ -6,4 +6,5 @@ public class Qustion
 {
     public int IDQuestion { get; set; }
     public string Description{ get; set; }
+    public List<Variant> Variants { get; set; }
 }
