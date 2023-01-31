@@ -52,10 +52,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameSctipt\Connect\Variant.cs" />
      <Compile Include="Assets\GameSctipt\Connect\ConnectDB.cs" />
      <Compile Include="Assets\GameSctipt\Connect\ReadTable.cs" />
      <Compile Include="Assets\GameSctipt\Connect\Qustion.cs" />
-     <Compile Include="Assets\GameSctipt\Connect\Variant.cs" />
  <Reference Include="UnityEngine">
  <HintPath>F:/HUb/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+
 public class ReadTable : MonoBehaviour
 {
     public List<Qustion> Questions { get; private set; }
@@ -18,8 +19,8 @@ public class ReadTable : MonoBehaviour
     {
         ReadQuestion();
         ReadVariant();
-        
     }
+   
 
     private void ReadQuestion()
     {
@@ -47,6 +48,12 @@ public class ReadTable : MonoBehaviour
                             var question = new Qustion();
                             question.IDQuestion = int.Parse(rdr["Id_question"].ToString());
                             question.Description = rdr["description"].ToString();
+                            if (rdr["img"].ToString() != "")
+                            {
+                                byte[] img = (byte[])rdr["img"];
+                                question.Img = new Texture2D(512, 512);
+                                question.Img.LoadImage(img,true);
+                            }
                             Questions.Add(question);
                         }
                     }
@@ -65,6 +72,7 @@ public class ReadTable : MonoBehaviour
             MySqlDataReader rdr = null;
             foreach (var question in Questions)
             {
+                question.Variants = new List<Variant>();
                 query = "SELECT * FROM variants WHERE id_question = "+question.IDQuestion+"";
                 connect.TryConnect();
                 using (connect.Con)
