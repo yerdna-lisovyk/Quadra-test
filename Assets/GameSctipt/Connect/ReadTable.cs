@@ -15,7 +15,7 @@ public class ReadTable : MonoBehaviour
     
     [SerializeField] private ConnectDB connect;
 
-    private void Start()
+    private void Awake()
     {
         ReadQuestion();
         ReadVariant();
