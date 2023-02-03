@@ -473,7 +473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 677379642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 677379644}
+        m_TargetAssemblyTypeName: InfoVariant, Assembly-CSharp
+        m_MethodName: GetInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &677379642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99dd927f30f5bf47aae731bb9eb2a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStat: {fileID: 0}
+  gameStat: {fileID: 1521684346}
 --- !u!1 &702625234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1082,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1076820195}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1076820197}
+        m_TargetAssemblyTypeName: InfoVariant, Assembly-CSharp
+        m_MethodName: GetInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1076820195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99dd927f30f5bf47aae731bb9eb2a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStat: {fileID: 0}
+  gameStat: {fileID: 1521684346}
 --- !u!1 &1271607784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1554,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1861201001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1861201003}
+        m_TargetAssemblyTypeName: InfoVariant, Assembly-CSharp
+        m_MethodName: GetInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1861201001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,7 +1617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99dd927f30f5bf47aae731bb9eb2a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStat: {fileID: 0}
+  gameStat: {fileID: 1521684346}
 --- !u!1 &2132011068
 GameObject:
   m_ObjectHideFlags: 0
