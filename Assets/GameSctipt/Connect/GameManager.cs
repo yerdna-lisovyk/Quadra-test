@@ -7,19 +7,26 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-   private int _nextQuestionNumber = 0;
-   private int _trueQuestion = 0;
    
+   
+   private int _nextQuestionNumber = 0;
+
+   private static GameManager _instans;
    [SerializeField] private List<Button> buttons;
    [SerializeField] private Text textQuestion;
    [SerializeField] private Image image;
    [SerializeField] private ReadTable table;
    private void Start()
    {
-      NextQuestion();
+      _instans = this;
       NextQuestion();
    }
 
+   public static void StaticNextQuestion()
+   {
+      _instans.NextQuestion();
+   }
+   
    private void NextQuestion()
    {
       textQuestion.text = table.Questions[_nextQuestionNumber].Description;
@@ -32,6 +39,7 @@ public class GameManager : MonoBehaviour
       var k = 0;
       foreach (var button in buttons)
       {
+         button.GetComponent<InfoVariant>().Variant = table.Questions[_nextQuestionNumber].Variants[k];
          button.GetComponentInChildren<Text>().text = table.Questions[_nextQuestionNumber].Variants[k].Description;
          k++;
       }

@@ -85,6 +85,7 @@ public class ReadTable : MonoBehaviour
                             while (rdr.Read())
                             {
                                 var variant = new Variant();
+                                variant.IDVariant =int.Parse(rdr["id_variants"].ToString());
                                 variant.IDQuestion = int.Parse(rdr["id_question"].ToString());
                                 variant.Description = rdr["description"].ToString();
                                 variant.Loyalty = bool.Parse(rdr["loyalty"].ToString());
