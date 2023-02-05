@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class ReadTable : MonoBehaviour
 {
-    public List<Qustion> Questions { get; private set; }
+    public static List<Qustion> Questions { get; private set; }
 
     
     [SerializeField] private ConnectDB connect;
