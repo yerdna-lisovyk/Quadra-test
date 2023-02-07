@@ -14,11 +14,11 @@ public class InfoVariant : MonoBehaviour
         if (Variant.Loyalty == true)
         {
             GameStat.NumberCorrectQuestions++;
-            GameStat.RightQuestions.Add(Variant.IDQuestion);
+            ReadTable.Questions[GameManager.NextQuestionNumber - 1].Accuracy = true;
         }
         else
         {
-            GameStat.ErrorNumbers.Add(Variant.IDVariant);
+            ReadTable.Questions[GameManager.NextQuestionNumber - 1].Accuracy = false;
         }
         GameManager.StaticNextQuestion();
     }

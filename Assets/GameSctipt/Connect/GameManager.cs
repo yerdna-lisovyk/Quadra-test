@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
    
    
-   private int _nextQuestionNumber = 0;
+   public static int NextQuestionNumber { get; private set; }
 
    private static GameManager _instans;
    [SerializeField] private List<Button> buttons;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
    private void Start()
    {
       _instans = this;
+      NextQuestionNumber = 0;
       NextQuestion();
    }
 
@@ -28,10 +30,15 @@ public class GameManager : MonoBehaviour
    
    private void NextQuestion()
    {
-      textQuestion.text = ReadTable.Questions[_nextQuestionNumber].Description;
-      if (ReadTable.Questions[_nextQuestionNumber].Img != null)
+      if (ReadTable.Questions.Count == NextQuestionNumber)
       {
-         var tmp = ReadTable.Questions[_nextQuestionNumber].Img;
+         SceneManager.LoadScene("EndScene");
+         return;
+      }
+      textQuestion.text = ReadTable.Questions[NextQuestionNumber].Description;
+      if (ReadTable.Questions[NextQuestionNumber].Img != null)
+      {
+         var tmp = ReadTable.Questions[NextQuestionNumber].Img;
          image.color = new Color(1, 1, 1, 1);
          var mySprite = Sprite.Create(tmp, new Rect(0.0f, 0.0f, tmp.width, tmp.height), new Vector2(0.5f, 0.5f), 100.0f);
          image.sprite = mySprite;
@@ -43,11 +50,11 @@ public class GameManager : MonoBehaviour
       var k = 0;
       foreach (var button in buttons)
       {
-         button.GetComponent<InfoVariant>().Variant = ReadTable.Questions[_nextQuestionNumber].Variants[k];
-         button.GetComponentInChildren<Text>().text = ReadTable.Questions[_nextQuestionNumber].Variants[k].Description;
+         button.GetComponent<InfoVariant>().Variant = ReadTable.Questions[NextQuestionNumber].Variants[k];
+         button.GetComponentInChildren<Text>().text = ReadTable.Questions[NextQuestionNumber].Variants[k].Description;
          k++;
       }
       
-      _nextQuestionNumber++;
+      NextQuestionNumber++;
    }
 }
