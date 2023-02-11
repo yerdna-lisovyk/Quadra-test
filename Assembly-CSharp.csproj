@@ -52,14 +52,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameSctipt\Results\ResultsGame.cs" />
      <Compile Include="Assets\GameSctipt\Game\InfoVariant.cs" />
      <Compile Include="Assets\GameSctipt\Qustion\Variant.cs" />
      <Compile Include="Assets\GameSctipt\Connect\ConnectDB.cs" />
      <Compile Include="Assets\GameSctipt\Game\GameStat.cs" />
+     <Compile Include="Assets\GameSctipt\Menu\MenuManager.cs" />
      <Compile Include="Assets\GameSctipt\Connect\ReadTable.cs" />
      <Compile Include="Assets\GameSctipt\Qustion\Qustion.cs" />
      <Compile Include="Assets\GameSctipt\Connect\GameManager.cs" />
-     <Compile Include="Assets\GameSctipt\Results\ResultsGame.cs" />
  <Reference Include="UnityEngine">
  <HintPath>F:/HUb/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
