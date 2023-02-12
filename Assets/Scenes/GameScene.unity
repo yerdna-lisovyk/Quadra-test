@@ -1386,8 +1386,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1521684342}
-  - component: {fileID: 1521684343}
-  - component: {fileID: 1521684344}
   - component: {fileID: 1521684345}
   m_Layer: 0
   m_Name: GameManager
@@ -1410,31 +1408,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1521684343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521684341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0529b715c6453d745b073199ac87c4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1521684344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521684341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d499f91acb1dca45bff4399eea7a6f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connect: {fileID: 1521684343}
 --- !u!114 &1521684345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,7 +1427,6 @@ MonoBehaviour:
   - {fileID: 1076820194}
   textQuestion: {fileID: 1301100324}
   image: {fileID: 909111392}
-  table: {fileID: 1521684344}
 --- !u!1 &1861200998
 GameObject:
   m_ObjectHideFlags: 0

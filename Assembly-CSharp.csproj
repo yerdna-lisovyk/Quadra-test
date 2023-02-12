@@ -61,6 +61,9 @@
      <Compile Include="Assets\GameSctipt\Connect\ReadTable.cs" />
      <Compile Include="Assets\GameSctipt\Qustion\Qustion.cs" />
      <Compile Include="Assets\GameSctipt\Connect\GameManager.cs" />
+     <Compile Include="Assets\GameSctipt\Qustion\Test.cs" />
+     <Compile Include="Assets\GameSctipt\Menu\SelectionSceneManager.cs" />
+     <Compile Include="Assets\GameSctipt\Menu\TestSelection.cs" />
  <Reference Include="UnityEngine">
  <HintPath>F:/HUb/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
