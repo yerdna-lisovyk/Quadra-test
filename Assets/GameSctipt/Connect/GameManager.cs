@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
    [SerializeField] private List<Button> buttons;
    [SerializeField] private Text textQuestion;
    [SerializeField] private Image image;
+   [SerializeField] private WriteTable write;
    private void Start()
    {
       _instans = this;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
    {
       if (ReadTable.Questions.Count == NextQuestionNumber)
       {
+         write.WriteLeaderboard();
          SceneManager.LoadScene("EndScene");
          return;
       }

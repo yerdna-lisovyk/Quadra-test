@@ -45,7 +45,7 @@ public class SelectionSceneManager : MonoBehaviour
         if (GameStat.SelectionTest !=0 && _inputFieldBatch.text!=""&& _inputFieldName.text!="")
         {
             GameStat.Batch = _inputFieldBatch.text;
-            GameStat.FirstName = _inputFieldBatch.name;
+            GameStat.FirstName = _inputFieldName.text;
             ReadTable.Questions = ReadTable.Tests[FindTest(GameStat.SelectionTest)].Qust;
             SceneManager.LoadScene("GameScene");
         }

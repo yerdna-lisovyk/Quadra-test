@@ -23,7 +23,7 @@ public class ReadTable : MonoBehaviour
         ReadVariant();
         
     }
-
+    
     private void ReadTest()
     {
         var query = string.Empty; 
